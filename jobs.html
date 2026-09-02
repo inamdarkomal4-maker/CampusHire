@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusHire - Jobs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CampusHire</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="internship.html">Internship</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    </nav>
+</header>
+ <section>
+    <h1>Available Jobs</h1>
+
+    <div class="job-search">
+        <input
+            type="text"
+            id="searchJob"
+            placeholder="Search jobs by title, company or location..."
+        >
+    </div>
+
+    <div id="jobs-container"></div>
+</section>
+
+
+<script>
+fetch("http://localhost:5000/api/jobs")
+    .then(response => response.json())
+    .then(jobs => {
+
+      jobs = jobs.filter(job => job.category === "Job");
+
+        const container = document.getElementById("jobs-container");
+
+        if (jobs.length === 0) {
+            container.innerHTML = "<p>No jobs available.</p>";
+            return;
+        }
+         
+
+        jobs.forEach(job => {
+
+            container.innerHTML += `
+                <div class="card">
+                    <h2>${job.title}</h2>
+                    <p><b>Company:</b> ${job.company}</p>
+                    <p><b>Location:</b> ${job.location}</p>
+                    <p><b>Salary:</b> ${job.salary}</p>
+                    <p><b>Type:</b> ${job.category}</p>
+                    <a href="application.html?id=${job._id}&title=${encodeURIComponent(job.title)}&company=${encodeURIComponent(job.company)}">
+    <button>Apply Now</button>
+</a>
+                </div>
+            `;
+        });
+    })
+    .catch(error => {
+        console.log(error);
+    });
+document.getElementById("searchJob").addEventListener("input", function () {
+
+    const searchText = this.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        const text = card.innerText.toLowerCase();
+
+        if (text.includes(searchText)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>

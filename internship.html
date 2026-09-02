@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internships | CampusHire</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f6fa;
+        }
+
+        nav {
+            background: #10152f;
+            padding: 18px 40px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #10152f;
+        }
+
+        #internshipList {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #5145a8;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #5145a8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="internships.html">Internships</a>
+        <a href="my-applications.html">My Applications</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Internship Opportunities</h1>
+
+        <div id="internshipList"></div>
+
+    </div>
+
+
+    <script>
+async function loadInternships() {
+    try {
+        const response = await fetch("http://localhost:5000/api/jobs");
+
+        const jobs = await response.json();
+
+        const internshipList =
+            document.getElementById("internshipList");
+
+        const internships = jobs.filter(
+            job => job.category === "Internship"
+        );
+
+        if (internships.length === 0) {
+            internshipList.innerHTML =
+                "<p>No internships available.</p>";
+            return;
+        }
+
+        internships.forEach(job => {
+
+            internshipList.innerHTML += `
+                <div class="card">
+
+                    <h2>${job.title}</h2>
+
+                    <p>
+                        <b>Company:</b> ${job.company}
+                    </p>
+
+                    <p>
+                        <b>Location:</b> ${job.location}
+                    </p>
+
+                    <p>
+                        <b>Salary/Stipend:</b> ${job.salary}
+                    </p>
+
+                    <p>
+                        <b>Type:</b> Internship
+                    </p>
+
+                    <a href="application.html?id=${job._id}&title=${encodeURIComponent(job.title)}&company=${encodeURIComponent(job.company)}&category=${encodeURIComponent(job.category)}">
+                        <button>Apply for Internship</button>
+                    </a>
+
+                </div>
+            `;
+        });
+
+    } catch (error) {
+        console.error("Error loading internships:", error);
+    }
+}
+
+loadInternships();
+</script>
+
+        
+</body>
+
+</html>

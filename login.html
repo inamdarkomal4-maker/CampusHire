@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | CampusHire</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #10152f, #5145a8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #10152f;
+        }
+
+        .logo span {
+            color: #5145a8;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 22px 0 8px;
+            color: #172033;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            margin: 16px 0 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d5dce5;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #5145a8;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #5145a8;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3d338d;
+        }
+
+        .register-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .register-text a {
+            color: #5145a8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="logo">
+            Campus<span>Hire</span>
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+            Login to continue your career journey.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="email">Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="password">Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <p class="register-text">
+            Don't have an account?
+            <a href="register.html">Create Account</a>
+        </p>
+
+    </div>
+
+
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        loginForm.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:5000/api/login",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            email: email,
+                            password: password
+                        })
+                    }
+                );
+
+
+                const result = await response.json();
+
+
+                if (response.ok) {
+
+                    localStorage.setItem(
+                        "loggedInUser",
+                        JSON.stringify(result.user)
+                    );
+
+                    document.getElementById("message").innerText =
+                        "Login successful!";
+
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                    }, 800);
+
+                } else {
+
+                    document.getElementById("message").innerText =
+                        result.message || "Invalid email or password.";
+
+                }
+
+            } catch (error) {
+
+                console.error(error);
+
+                document.getElementById("message").innerText =
+                    "Server connection failed.";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

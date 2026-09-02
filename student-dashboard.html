@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | CampusHire</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="dashboard-logo">
+            Campus<span>Hire</span>
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="student-dashboard.html" class="active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="jobs.html">
+                <span>⌕</span>
+                Find Opportunities
+            </a>
+
+            <a href="#">
+                <span>▣</span>
+                My Applications
+            </a>
+
+            <a href="#">
+                <span>♡</span>
+                Saved Jobs
+            </a>
+
+            <a href="#">
+                <span>◉</span>
+                My Profile
+            </a>
+
+        </nav>
+
+        <p class="menu-title bottom-title">ACCOUNT</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="#">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="index.html">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                K
+            </div>
+
+            <div>
+                <strong>Komal</strong>
+                <small>Student</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN DASHBOARD -->
+
+    <main class="dashboard-main">
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="dashboard-date" id="currentDate"></p>
+
+                <h1>Good evening, Komal 👋</h1>
+
+                <p class="header-subtitle">
+                    Here's what's happening with your career today.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="notification-btn">
+                    ♧
+                    <span></span>
+                </button>
+
+                <div class="profile-mini">
+                    <div class="user-avatar">K</div>
+
+                    <div>
+                        <strong>Komal</strong>
+                        <small>BCA Student</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PROFILE COMPLETION -->
+
+        <section class="profile-banner">
+
+            <div class="profile-banner-text">
+
+                <span class="banner-label">
+                    PROFILE STRENGTH
+                </span>
+
+                <h2>Your profile is almost ready!</h2>
+
+                <p>
+                    Complete your profile to increase your chances
+                    of getting noticed by recruiters.
+                </p>
+
+                <button>
+                    Complete Profile →
+                </button>
+
+            </div>
+
+
+            <div class="profile-progress">
+
+                <div class="progress-circle">
+                    <strong>75%</strong>
+                </div>
+
+                <p>Profile completed</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">⌁</div>
+
+                <div>
+                    <p>Applications</p>
+                    <h2>12</h2>
+                    <small>+3 this week</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">◉</div>
+
+                <div>
+                    <p>Shortlisted</p>
+                    <h2>4</h2>
+                    <small>2 new updates</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">♡</div>
+
+                <div>
+                    <p>Saved Jobs</p>
+                    <h2>8</h2>
+                    <small>3 closing soon</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">★</div>
+
+                <div>
+                    <p>Profile Views</p>
+                    <h2>27</h2>
+                    <small>+18% this month</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN GRID -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- APPLICATION TRACKER -->
+
+            <div class="dashboard-card application-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>Application Tracker</h2>
+                        <p>Track your recent applications.</p>
+                    </div>
+
+                    <a href="#">View all</a>
+
+                </div>
+
+
+                <div class="application-list">
+
+
+                    <div class="application-item">
+
+                        <div class="company-box">
+                            T
+                        </div>
+
+                        <div class="application-info">
+
+                            <h3>Junior Web Developer</h3>
+
+                            <p>Tata Consultancy Services</p>
+
+                        </div>
+
+                        <span class="status shortlisted">
+                            Shortlisted
+                        </span>
+
+                    </div>
+
+
+                    <div class="application-item">
+
+                        <div class="company-box">
+                            W
+                        </div>
+
+                        <div class="application-info">
+
+                            <h3>Frontend Developer Intern</h3>
+
+                            <p>WebTech Solutions</p>
+
+                        </div>
+
+                        <span class="status applied">
+                            Applied
+                        </span>
+
+                    </div>
+
+
+                    <div class="application-item">
+
+                        <div class="company-box">
+                            I
+                        </div>
+
+                        <div class="application-info">
+
+                            <h3>Python Developer</h3>
+
+                            <p>Innovate Technologies</p>
+
+                        </div>
+
+                        <span class="status review">
+                            Under Review
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE CARD -->
+
+            <div class="dashboard-card profile-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>My Profile</h2>
+                        <p>Keep your profile updated.</p>
+                    </div>
+
+                    <button class="edit-btn">
+                        Edit
+                    </button>
+
+                </div>
+
+
+                <div class="profile-main">
+
+                    <div class="large-avatar">
+                        K
+                    </div>
+
+                    <h3>Komal Inamdar</h3>
+
+                    <p>BCA Student</p>
+
+                    <span class="location">
+                        📍 Karnataka, India
+                    </span>
+
+                </div>
+
+
+                <div class="profile-skills">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>MongoDB</span>
+                    <span>Git</span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- RECOMMENDED JOBS -->
+
+        <section class="dashboard-card recommended-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Recommended For You</h2>
+
+                    <p>
+                        Opportunities matching your skills.
+                    </p>
+                </div>
+
+                <a href="jobs.html">
+                    Explore all →
+                </a>
+
+            </div>
+
+
+            <div class="recommended-grid">
+
+
+                <div class="recommended-job">
+
+                    <div class="recommend-top">
+
+                        <div class="company-box">
+                            T
+                        </div>
+
+                        <span>95% Match</span>
+
+                    </div>
+
+                    <h3>Frontend Developer</h3>
+
+                    <p>Tata Consultancy Services</p>
+
+                    <div class="recommend-details">
+                        📍 Bangalore &nbsp; • &nbsp; ₹4–6 LPA
+                    </div>
+
+                    <button onclick="window.location.href='job-details.html'">
+                        View Opportunity
+                    </button>
+
+                </div>
+
+
+                <div class="recommended-job">
+
+                    <div class="recommend-top">
+
+                        <div class="company-box">
+                            W
+                        </div>
+
+                        <span>89% Match</span>
+
+                    </div>
+
+                    <h3>React Developer Intern</h3>
+
+                    <p>WebTech Solutions</p>
+
+                    <div class="recommend-details">
+                        📍 Remote &nbsp; • &nbsp; ₹12K/month
+                    </div>
+
+                    <button onclick="window.location.href='job-details.html'">
+                        View Opportunity
+                    </button>
+
+                </div>
+
+
+                <div class="recommended-job">
+
+                    <div class="recommend-top">
+
+                        <div class="company-box">
+                            I
+                        </div>
+
+                        <span>84% Match</span>
+
+                    </div>
+
+                    <h3>Python Developer</h3>
+
+                    <p>Innovate Technologies</p>
+
+                    <div class="recommend-details">
+                        📍 Pune &nbsp; • &nbsp; ₹5–7 LPA
+                    </div>
+
+                    <button onclick="window.location.href='job-details.html'">
+                        View Opportunity
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

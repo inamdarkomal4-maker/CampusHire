@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recruiter Dashboard | CampusHire</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="recruiter-page">
+
+    <!-- SIDEBAR -->
+
+    <aside class="recruiter-sidebar">
+
+        <div class="dashboard-logo">
+            Campus<span>Hire</span>
+        </div>
+
+        <p class="menu-title">RECRUITER MENU</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="recruiter-dashboard.html" class="active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#">
+                <span>＋</span>
+                Post a Job
+            </a>
+
+            <a href="#">
+                <span>▣</span>
+                My Jobs
+            </a>
+
+            <a href="#">
+                <span>♙</span>
+                Applications
+            </a>
+
+            <a href="#">
+                <span>♡</span>
+                Saved Candidates
+            </a>
+
+        </nav>
+
+        <p class="menu-title bottom-title">ACCOUNT</p>
+
+        <nav class="sidebar-menu">
+
+            <a href="#">
+                <span>⚙</span>
+                Company Profile
+            </a>
+
+            <a href="index.html">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                T
+            </div>
+
+            <div>
+                <strong>TCS Recruiter</strong>
+                <small>Recruiter</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="recruiter-main">
+
+        <!-- HEADER -->
+
+        <header class="recruiter-header">
+
+            <div>
+                <p class="dashboard-date">
+                    RECRUITER PORTAL
+                </p>
+
+                <h1>Welcome back, Recruiter 👋</h1>
+
+                <p class="header-subtitle">
+                    Manage your jobs and discover talented candidates.
+                </p>
+            </div>
+
+            <button
+                class="post-job-main-btn"
+                onclick="openJobModal()"
+            >
+                + Post New Job
+            </button>
+
+        </header>
+
+
+        <!-- STATS -->
+
+        <section class="recruiter-stats">
+
+            <div class="recruiter-stat">
+
+                <div class="recruiter-stat-icon">
+                    ＋
+                </div>
+
+                <div>
+                    <p>Active Jobs</p>
+                    <h2>8</h2>
+                    <small>2 posted this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="recruiter-stat">
+
+                <div class="recruiter-stat-icon">
+                    ♙
+                </div>
+
+                <div>
+                    <p>Total Applications</p>
+                    <h2>126</h2>
+                    <small>+24 this week</small>
+                </div>
+
+            </div>
+
+
+            <div class="recruiter-stat">
+
+                <div class="recruiter-stat-icon">
+                    ★
+                </div>
+
+                <div>
+                    <p>Shortlisted</p>
+                    <h2>18</h2>
+                    <small>5 awaiting review</small>
+                </div>
+
+            </div>
+
+
+            <div class="recruiter-stat">
+
+                <div class="recruiter-stat-icon">
+                    ◉
+                </div>
+
+                <div>
+                    <p>Profile Views</p>
+                    <h2>2.4K</h2>
+                    <small>+12% this month</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="recruiter-content-grid">
+
+
+            <!-- RECENT APPLICATIONS -->
+
+            <div class="recruiter-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>Recent Applications</h2>
+
+                        <p>
+                            Review candidates who recently applied.
+                        </p>
+                    </div>
+
+                    <a href="#">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div class="candidate-list">
+
+
+                    <div class="candidate-item">
+
+                        <div class="candidate-avatar">
+                            K
+                        </div>
+
+                        <div class="candidate-info">
+
+                            <h3>Komal Inamdar</h3>
+
+                            <p>
+                                Junior Web Developer
+                            </p>
+
+                            <small>
+                                BCA • HTML • CSS • JavaScript
+                            </small>
+
+                        </div>
+
+                        <span class="candidate-status new">
+                            New
+                        </span>
+
+                        <button class="review-btn">
+                            Review
+                        </button>
+
+                    </div>
+
+
+                    <div class="candidate-item">
+
+                        <div class="candidate-avatar">
+                            A
+                        </div>
+
+                        <div class="candidate-info">
+
+                            <h3>Aditya Patil</h3>
+
+                            <p>
+                                Frontend Developer
+                            </p>
+
+                            <small>
+                                BCA • React • JavaScript
+                            </small>
+
+                        </div>
+
+                        <span class="candidate-status review">
+                            Reviewing
+                        </span>
+
+                        <button class="review-btn">
+                            Review
+                        </button>
+
+                    </div>
+
+
+                    <div class="candidate-item">
+
+                        <div class="candidate-avatar">
+                            S
+                        </div>
+
+                        <div class="candidate-info">
+
+                            <h3>Sneha Kulkarni</h3>
+
+                            <p>
+                                Web Developer Intern
+                            </p>
+
+                            <small>
+                                BCA • HTML • CSS • Git
+                            </small>
+
+                        </div>
+
+                        <span class="candidate-status shortlisted">
+                            Shortlisted
+                        </span>
+
+                        <button class="review-btn">
+                            View
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- JOB PERFORMANCE -->
+
+            <div class="recruiter-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>Job Performance</h2>
+                        <p>Your active listings.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="job-performance">
+
+                    <div>
+
+                        <div class="performance-title">
+
+                            <strong>
+                                Junior Web Developer
+                            </strong>
+
+                            <span>42 Applicants</span>
+
+                        </div>
+
+                        <div class="performance-bar">
+
+                            <div style="width: 78%;"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="performance-title">
+
+                            <strong>
+                                Frontend Developer Intern
+                            </strong>
+
+                            <span>31 Applicants</span>
+
+                        </div>
+
+                        <div class="performance-bar">
+
+                            <div style="width: 58%;"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="performance-title">
+
+                            <strong>
+                                Python Developer
+                            </strong>
+
+                            <span>53 Applicants</span>
+
+                        </div>
+
+                        <div class="performance-bar">
+
+                            <div style="width: 90%;"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVE JOBS -->
+
+        <section class="recruiter-card active-jobs-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Your Active Jobs</h2>
+                    <p>Manage your current job postings.</p>
+                </div>
+
+                <button
+                    class="small-post-btn"
+                    onclick="openJobModal()"
+                >
+                    + Post Job
+                </button>
+
+            </div>
+
+
+            <div class="active-job-table">
+
+                <div class="table-row table-header">
+
+                    <span>JOB TITLE</span>
+                    <span>APPLICANTS</span>
+                    <span>POSTED</span>
+                    <span>STATUS</span>
+                    <span>ACTION</span>
+
+                </div>
+
+
+                <div class="table-row">
+
+                    <strong>
+                        Junior Web Developer
+                    </strong>
+
+                    <span>42</span>
+
+                    <span>3 days ago</span>
+
+                    <span class="active-status">
+                        Active
+                    </span>
+
+                    <button>
+                        Manage
+                    </button>
+
+                </div>
+
+
+                <div class="table-row">
+
+                    <strong>
+                        Frontend Developer Intern
+                    </strong>
+
+                    <span>31</span>
+
+                    <span>1 week ago</span>
+
+                    <span class="active-status">
+                        Active
+                    </span>
+
+                    <button>
+                        Manage
+                    </button>
+
+                </div>
+
+
+                <div class="table-row">
+
+                    <strong>
+                        Python Developer
+                    </strong>
+
+                    <span>53</span>
+
+                    <span>2 weeks ago</span>
+
+                    <span class="active-status">
+                        Active
+                    </span>
+
+                    <button>
+                        Manage
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- POST JOB MODAL -->
+
+    <div class="modal" id="jobModal">
+
+        <div class="job-modal-box">
+
+            <button
+                class="close-btn"
+                onclick="closeJobModal()"
+            >
+                ×
+            </button>
+
+            <h2>Post a New Job</h2>
+
+            <p>
+                Find the right candidate for your company.
+            </p>
+
+
+            <form onsubmit="postJob(event)">
+
+                <label>Job Title</label>
+
+                <input
+                    type="text"
+                    placeholder="e.g. Frontend Developer"
+                    required
+                >
+
+
+                <label>Company Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Company name"
+                    required
+                >
+
+
+                <div class="form-two">
+
+                    <div>
+
+                        <label>Job Type</label>
+
+                        <select required>
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option>
+                                Full Time
+                            </option>
+
+                            <option>
+                                Internship
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>Experience</label>
+
+                        <select required>
+
+                            <option value="">
+                                Select experience
+                            </option>
+
+                            <option>
+                                Fresher
+                            </option>
+
+                            <option>
+                                0–2 Years
+                            </option>
+
+                            <option>
+                                2–5 Years
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    placeholder="e.g. Bangalore / Remote"
+                    required
+                >
+
+
+                <label>Salary</label>
+
+                <input
+                    type="text"
+                    placeholder="e.g. ₹4–6 LPA"
+                    required
+                >
+
+
+                <label>Required Skills</label>
+
+                <input
+                    type="text"
+                    placeholder="HTML, CSS, JavaScript..."
+                    required
+                >
+
+
+                <label>Job Description</label>
+
+                <textarea
+                    rows="4"
+                    placeholder="Describe the job..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="publish-job-btn"
+                >
+                    Publish Job →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

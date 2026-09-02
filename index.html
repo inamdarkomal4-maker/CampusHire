@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusHire | Build Your Career</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8fc;
+            color: #172033;
+        }
+
+        /* NAVBAR */
+
+        header {
+            background: #10152f;
+            padding: 18px 7%;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: #8b7cff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #dce1f2;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #9c91ff;
+        }
+
+        .login-btn {
+            border: 1px solid #8b7cff;
+            padding: 9px 18px;
+            border-radius: 8px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 610px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 85% 20%, #5145a8 0%, transparent 25%),
+                linear-gradient(135deg, #10152f, #20265a);
+
+            color: white;
+            padding: 70px 7%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 14px;
+            margin-bottom: 22px;
+
+            border-radius: 30px;
+
+            background: rgba(139, 124, 255, 0.15);
+            border: 1px solid rgba(139, 124, 255, 0.5);
+
+            color: #c9c2ff;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #9c91ff;
+        }
+
+        .hero p {
+            max-width: 600px;
+
+            color: #c8cee2;
+            font-size: 18px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-block;
+
+            padding: 14px 24px;
+            border-radius: 10px;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #8b7cff;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #7465e8;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #68709a;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* HERO CARD */
+
+        .hero-card {
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            padding: 28px;
+
+            border-radius: 22px;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        .hero-card h3 {
+            margin-bottom: 20px;
+            font-size: 21px;
+        }
+
+        .mini-job {
+            background: white;
+            color: #172033;
+
+            padding: 17px;
+            margin-bottom: 12px;
+
+            border-radius: 12px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mini-job strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mini-job small {
+            color: #687087;
+        }
+
+        .tag {
+            background: #eeeaff;
+            color: #5b4fd4;
+
+            padding: 6px 10px;
+            border-radius: 20px;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* STATS */
+
+        .stats {
+            max-width: 1100px;
+            margin: -45px auto 0;
+
+            position: relative;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 15px 40px rgba(20,25,60,0.12);
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            text-align: center;
+        }
+
+        .stat h2 {
+            color: #5145a8;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: #687087;
+        }
+
+        /* FEATURES */
+
+        .features {
+            padding: 90px 7%;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: #172033;
+        }
+
+        .section-text {
+            color: #687087;
+            margin-bottom: 45px;
+        }
+
+        .feature-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: white;
+
+            padding: 30px 25px;
+
+            border-radius: 18px;
+
+            border: 1px solid #e7e9f2;
+
+            text-align: left;
+
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(30,35,80,0.1);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eeeaff;
+            color: #5145a8;
+
+            border-radius: 12px;
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #687087;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+
+        .cta {
+            margin: 20px 7% 80px;
+
+            padding: 55px 30px;
+
+            text-align: center;
+
+            border-radius: 24px;
+
+            background: linear-gradient(135deg, #5145a8, #272c68);
+
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #d9dcf0;
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+            display: inline-block;
+
+            padding: 13px 24px;
+
+            background: white;
+            color: #5145a8;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #10152f;
+            color: #aeb5ce;
+
+            padding: 30px 7%;
+
+            text-align: center;
+
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .stats {
+                margin: 20px;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                Campus<span>Hire</span>
+            </div>
+
+            <nav>
+
+                <a href="index.html">Home</a>
+
+                <a href="jobs.html">Jobs</a>
+
+                <a href="internship.html">Internships</a>
+
+                
+                <a href="my-applications.html">
+                    My Applications
+                </a>
+              <div id="authArea">
+                <a href="login.html" class="login-btn">
+                    Login
+                </a>
+              </div>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+
+            <div>
+
+                <div class="badge">
+                    🚀 Start your career journey
+                </div>
+
+
+                <h1>
+                    Find your next
+                    <span>opportunity.</span>
+                </h1>
+
+
+                <p>
+                    CampusHire connects students and freshers
+                    with jobs and internships that help them
+                    build real careers.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="jobs.html"
+                        class="primary-btn">
+                        Explore Jobs
+                    </a>
+
+                    <a
+                        href="internship.html"
+                        class="secondary-btn">
+                        Find Internships
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- JOB PREVIEW -->
+
+            <div class="hero-card">
+
+                <h3>
+                    🔥 Trending opportunities
+                </h3>
+
+
+                <div class="mini-job">
+
+                    <div>
+
+                        <strong>
+                            Junior Web Developer
+                        </strong>
+
+                        <small>
+                            TCS • Bangalore
+                        </small>
+
+                    </div>
+
+                    <span class="tag">
+                        Full Time
+                    </span>
+
+                </div>
+
+
+                <div class="mini-job">
+
+                    <div>
+
+                        <strong>
+                            Frontend Intern
+                        </strong>
+
+                        <small>
+                            Tech Startup • Remote
+                        </small>
+
+                    </div>
+
+                    <span class="tag">
+                        Internship
+                    </span>
+
+                </div>
+
+
+                <div class="mini-job">
+
+                    <div>
+
+                        <strong>
+                            Python Developer
+                        </strong>
+
+                        <small>
+                            IT Company • Pune
+                        </small>
+
+                    </div>
+
+                    <span class="tag">
+                        Fresher
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat">
+
+            <h2>500+</h2>
+
+            <p>
+                Job Opportunities
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h2>200+</h2>
+
+            <p>
+                Internships
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h2>1000+</h2>
+
+            <p>
+                Student Users
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <h2>
+            Everything you need to start
+        </h2>
+
+        <p class="section-text">
+            A simple platform designed for students and freshers.
+        </p>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Discover Jobs
+                </h3>
+
+                <p>
+                    Search and explore opportunities
+                    based on your skills and interests.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Apply Easily
+                </h3>
+
+                <p>
+                    Submit applications through a
+                    simple and organized process.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="icon">
+                    📊
+                </div>
+
+                <h3>
+                    Track Applications
+                </h3>
+
+                <p>
+                    Keep track of your submitted
+                    applications and their status.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to find your opportunity?
+        </h2>
+
+        <p>
+            Explore jobs and internships today.
+        </p>
+
+        <a href="jobs.html">
+            Explore Opportunities
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 CampusHire.
+        Built for students and freshers.
+
+    </footer>
+<script>
+
+const authArea = document.getElementById("authArea");
+
+const loggedInUser =
+    JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (loggedInUser) {
+
+    authArea.innerHTML = `
+        <span style="
+            color: white;
+            margin-right: 15px;
+            font-weight: bold;
+        ">
+            Hi, ${loggedInUser.name}
+        </span>
+
+        <button
+            onclick="logout()"
+            style="
+                padding: 9px 18px;
+                border: 1px solid #8b7cff;
+                border-radius: 8px;
+                background: transparent;
+                color: white;
+                cursor: pointer;
+            "
+        >
+            Logout
+        </button>
+    `;
+
+}
+
+
+function logout() {
+
+    localStorage.removeItem("loggedInUser");
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Details | CampusHire</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="details-page">
+
+    <!-- NAVBAR -->
+
+    <header>
+        <div class="logo">CampusHire</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="jobs.html">Internships</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+
+    <!-- JOB HEADER -->
+
+    <section class="job-details-header">
+
+        <div class="job-company-logo">
+            TCS
+        </div>
+
+        <div>
+            <span>FULL-TIME JOB</span>
+
+            <h1>Junior Web Developer</h1>
+
+            <p>Tata Consultancy Services</p>
+
+            <p>📍 Bangalore, Karnataka &nbsp; • &nbsp; 💼 0–2 Years</p>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="details-container">
+
+        <div class="details-content">
+
+            <section>
+                <h2>About the Job</h2>
+
+                <p>
+                    We are looking for a motivated Junior Web Developer
+                    to join our development team. The candidate will work
+                    on building responsive and user-friendly web applications.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>Responsibilities</h2>
+
+                <ul>
+                    <li>Develop responsive web pages.</li>
+                    <li>Write clean and maintainable code.</li>
+                    <li>Work with developers and designers.</li>
+                    <li>Fix bugs and improve website performance.</li>
+                    <li>Test web applications before deployment.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>Required Skills</h2>
+
+                <div class="detail-skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Git</span>
+                    <span>Responsive Design</span>
+                </div>
+            </section>
+
+
+            <section>
+                <h2>Eligibility</h2>
+
+                <ul>
+                    <li>BCA / BSc CS / BTech or equivalent degree.</li>
+                    <li>Good understanding of web development.</li>
+                    <li>Basic knowledge of Git and APIs.</li>
+                </ul>
+            </section>
+
+        </div>
+
+
+        <!-- APPLY CARD -->
+
+        <aside class="apply-card">
+
+            <h2>₹3 – 5 LPA</h2>
+
+            <p>Salary</p>
+
+            <hr>
+
+            <p><strong>Job Type</strong><br>Full Time</p>
+
+            <p><strong>Experience</strong><br>0–2 Years</p>
+
+            <p><strong>Location</strong><br>Bangalore</p>
+
+            <button onclick="openApplication()">
+                Apply Now →
+            </button>
+
+        </aside>
+
+    </main>
+
+
+    <!-- APPLICATION MODAL -->
+
+    <div class="modal" id="applicationModal">
+
+        <div class="application-box">
+
+            <button class="close-btn" onclick="closeApplication()">
+                ×
+            </button>
+
+            <h2>Apply for this position</h2>
+
+            <p>Junior Web Developer — TCS</p>
+
+            <form onsubmit="submitApplication(event)">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+                <label>Resume</label>
+
+                <input
+                    type="file"
+                    accept=".pdf"
+                    required
+                >
+
+                <button type="submit">
+                    Submit Application
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+<div class="modal" id="successModal">
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>Application Submitted!</h2>
+
+        <p>
+            Your application for
+            <strong>Junior Web Developer</strong>
+            has been submitted successfully.
+        </p>
+
+        <p class="success-note">
+            You can track your application status from your dashboard.
+        </p>
+
+        <button onclick="closeSuccess()">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
