@@ -110,7 +110,7 @@ if (!loggedInUser) {
 }
 
 const response = await fetch(
-    `http://localhost:5000/api/applications?email=${encodeURIComponent(loggedInUser.email)}`
+    `/api/applications?email=${encodeURIComponent(loggedInUser.email)}`
 );
         
         const applications =
